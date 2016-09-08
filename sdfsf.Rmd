@@ -1,0 +1,33 @@
+---
+title: "Bayes HW 1"
+author: "2011-11085"
+date: "2016³â 9¿ù 8ÀÏ"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Ozone - Wind simple linear regression 
+
+
+```{r}
+air <- as.matrix(airquality)
+y <- air[,1]
+X <- air[,3]
+reg <- lm(y~X)
+reg
+```
+
+## Plot
+
+```{r,echo=F}
+plot(X,y)
+s <- reg$coefficients[1]
+t <- reg$coefficients[2]
+abline(a=s,b=t)
+```
+
+
+
